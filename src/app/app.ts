@@ -1,15 +1,16 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Header } from './components/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Header],
   template: `
-    <h1>Welcome to {{ title() }}!</h1>
-
-    <router-outlet />
+    <div class="container mx-auto mt-10">
+      <app-header />
+      <router-outlet />
+    </div>
   `,
-  styles: [],
 })
 export class App {
   protected readonly title = signal('projectviernes');
