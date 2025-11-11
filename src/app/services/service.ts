@@ -21,17 +21,9 @@ export class Service {
   }
 
   async getCoches(): Promise<Coche[]> {
-    try {
       const response = await fetch(`${this.apiCochesUrl}webresources/coches`)
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
       const data: Coche[] = await response.json();
       return data;
-    } catch (error) {
-      console.error('Error al obtener coches con fetch:', error);
-      throw error;
-    }
   }
 
   async getPersonasConFetch(): Promise<Persona[]> {
