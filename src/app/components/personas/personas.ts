@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PersonaService } from '../../services/service';
+import { Service } from '../../services/service';
 import { Persona } from '../../models/persona';
 
 @Component({
@@ -28,12 +28,11 @@ import { Persona } from '../../models/persona';
       </div>
     </div>
   `,
-  styles: ``,
 })
 export class Personas implements OnInit {
   personas: Persona[] = [];
 
-  private personaService = inject(PersonaService);
+  private personaService = inject(Service);
 
   async ngOnInit() {
     await this.cargarPersonas();

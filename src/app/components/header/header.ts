@@ -13,6 +13,9 @@ import { RouterLink } from '@angular/router';
         <li>
           <a [routerLink]="'/personas'" class="hover:text-white/60 transition">Personas</a>
         </li>
+        <li>
+          <a [routerLink]="'/coches'" class="hover:text-white/60 transition">Coches</a>
+        </li>
       </ul>
     </div>
   `,
