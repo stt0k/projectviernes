@@ -11,13 +11,8 @@ export class Service {
   private apiCochesUrl = environment.urlCoches;
 
   async getPersonas(): Promise<Persona[]> {
-    try {
       const response = await axios.get<Persona[]>(`${this.apiUrl}api/personas`);
       return response.data;
-    } catch (error) {
-      console.error('Error al obtener personas:', error);
-      throw error;
-    }
   }
 
   async getCoches(): Promise<Coche[]> {
